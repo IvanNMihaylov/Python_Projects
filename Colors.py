@@ -6,7 +6,7 @@ def empty(a):   # func for create Track Bar
     pass
 
 
-path = "C:/Users/ivan.mihaylov/Desktop/Python_openCV/lambo.jpg"  # image directory
+path = "-------"  # image directory
 cv2.namedWindow("TrackBars")                                     # window for Track Bar (640x240)
 cv2.resizeWindow("TrackBars", 640, 240)
 
