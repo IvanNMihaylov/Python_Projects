@@ -1,51 +1,47 @@
-names = ["SNEJINA", "NADEEM", "GENE", "TOD", "KOSIO", "EMA", "SASHO", "DIMITAR", "MAIA", "ARSLAN", "JIN"]
+names = ["SNEJINA", "GENE", "TOD", "KOSIO", "NADEEM", "EMA", "SASHO", "DIMITAR", "MAIA", "ARSLAN", "JIN"]
 
 
 class Concat:
 
-    index1 = 0
-    best_match_count = 0
-    best_match = ""
-    the_name = ""
+    weight = 0
+    tail = ""
+    dict = {}
 
     def __init__(self, firstName, secondName):
         self.firstName = firstName
         self.secondName = secondName
 
-    def __repr__(self):
-        return self.best_match
 
     def func(self):
         first = self.firstName
         second = self.secondName
-        index = 0
-        i = 1
-        while i < len(first):
-            try:
-                if first[len(first)-i] == second[i-1] or first[len(first) - i] == second[i]:
-                    i += 1
-                    index += 1
-                elif first[len(first)-i] == second[i-2] or first[len(first) - i] == second[i-1]:
-                    i += 1
-                    index += 1
-                else:
-                    break
-                if index > Concat.index1:
-                    Concat.index1 = index
-                    Concat.best_match = second
-            except:
-                break
+        tail = ""
+        weight = 0
+        part = first
+        for i in range(len(first)-1):
+            if len(first) - 1 > i:
+                part = first[((len(first) - 1) - i):]
+            if second.startswith(part):
+                if Concat.weight < i + 1:
+                    weight = i + 1
+                    Concat.weight = i + 1
+                    tail = second
+                    Concat.tail = second
+                    Concat.dict[first] = [second, weight]
+            elif Concat.weight == 0:
+                Concat.dict[first] = [second, weight]
 
 
-
-the_name = names[0]
-while the_name:
+for first_name in names:
     for second_name in names:
-        if the_name == second_name:
+        if first_name == second_name:
             continue
         else:
-            Concat(the_name, second_name).func()
+            Concat(first_name, second_name).func()
+    Concat.weight = 0
 
-    names.remove(Concat.best_match)
-    the_name = Concat.best_match
-    Concat.index1 = 0
+my_dict = Concat.dict
+key_list = list(my_dict.keys())
+val_list = list(my_dict.values())
+sub_str = []
+print(my_dict)
