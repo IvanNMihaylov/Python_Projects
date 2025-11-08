@@ -1,5 +1,19 @@
-# Python_Projects
+## Проекти
 
-- In Quizzing_Game I use a API (https://opentdb.com/api_config.php) to crate the quiz. 
-- For Colors, VirtualPaint and ColorPicker I use cv2, cvzone, numpy modoles.
+По-долу е даден списък на проектите, включени в това репозитори:
 
+* **Quizzing_Game.py**: Игра с въпроси (quiz game), която използва [OpenTDB API](https://opentdb.com/api_config.php) за генериране на въпроси.
+* **VirtualPaint.py**: Приложение за виртуално рисуване, което вероятно използва компютърно зрение.
+* **ColorPicker.py**: Инструмент за избор на цветове, вероятно свързан с проектите за компютърно зрение.
+* **BackgroundRemover.py**: Скрипт за премахване на фона от изображения.
+* **Colors.py**: Скрипт, свързан с обработка на цветове, вероятно използван от `VirtualPaint` или `ColorPicker`.
+
+## Технологии
+
+Основните технологии и библиотеки, използвани в тези проекти, включват:
+
+* **Python**
+* **OpenTDB API**: За `Quizzing_Game.py`
+* **OpenCV (`cv2`)**: За проектите, свързани с компютърно зрение.
+* **cvzone**: За проектите, свързани с компютърно зрение.
+* **Numpy**: За научни изчисления и работа с масиви.
